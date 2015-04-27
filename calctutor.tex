@@ -1,0 +1,715 @@
+%% bare\_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran\_HOWTO.pdf, bare\_adv.tex,
+%%                    bare\_conf.tex, bare\_jrnl.tex, bare\_jrnl\_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+\usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my\_url\_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{CalcTutor: Applying the Teacher’s Dilemma Methodology to Calculus Pedagogy}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Kristian Kime}
+\IEEEauthorblockA{Computer Science Department\\
+Brandeis University\\
+Waltham, MA 02453, USA\\
+Email: kristian@brandeis.edu}
+\and
+\IEEEauthorblockN{Becci Torrey}
+\IEEEauthorblockA{Mathematics Department\\
+Brandeis University\\
+Waltham, MA 02453, USA\\
+Email: rtorrey@brandeis.edu}
+\and
+\IEEEauthorblockN{Timothy Hickey}
+\IEEEauthorblockA{Computer Science Department\\
+Brandeis University\\
+Waltham, MA 02453, USA\\
+Email: tjhickey@brandeis.edu
+}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+
+We have designed and built CalcTutor, an online educational tool for Calculus that employs the Teacher’s Dilemma methodology. This methodology is centered around a game framework where students take on, and are rewarded for playing well, both the role of learner and teacher. Students create machine-verifiable questions for each other and gain points based on not only correct answers but also asking “good” questions. This framework has been used and studied in a variety of projects, mostly in the K-12 arena. In this paper, we are reporting on our experience with a pilot program that expanded this approach to college level classes, specifically introductory Calculus. 
+
+The system is designed to support learning in two ways, teachers can build quizzes for their students and the students can pair off and play games with each other. During this pilot study the students built questions for each other while being given dynamic feedback about how appropriate their question is. Students asked and answered problems based around finding the derivative of a functions or calculating the tangent line to a function at a point.
+
+The system was simultaneously tested in five introductory Calculus sections which generated a sizeable body of system data as well as survey feedback. Unfortunately, like many new tools, some of the students found getting used to the interface hard and some of our theoretical concepts did not pan out. Nevertheless the technical parts of the system worked well; students and teachers were able to create and answer questions without any issues. Some of the untested ideas that we were trying out met with success. And many students enjoyed some features of the system, particularly the instantaneous feedback.
+
+\end{abstract}
+
+\section{Introduction}
+ statement of the research questions -- TIM
+
+One of the enticing promises of online education is the ability to scale up class size dramatically while maintaining, or at least not significantly lowering, the level of learning. The Teacher's Dilemma offers a way to realize this goal. By creating a framework within which peers are rewarded for being good teachers we can turn the usual limitation of having large number of students into an asset. The hope is that this might be able to offset the difficulties of having a large class size. And thus be a viable way to improve a larger classes, or even open online learning.
+
+The purpose of this pilot study was to take the Teacher's Dilemma one step closer to this goal. Previously the concept had only been applied to small isolated problems in the K-12 learning space. For example figuring out how to make specified cash amount out of quarters, dimes, nickels and pennies. We wanted to pick a larger, more complete corpus in the higher education space. We decided that college level intro calculus would be a sufficiently advanced, rich topic to build a system around.
+
+For the pilot study we wanted to demonstrate the viability of the system from a technical standpoint as well as make inroads into showing how some of the theoretical aspects might work. We built a new web based system on a foundation that will allowing scaling up to a large number of users. The system has a custom differentiation engine and mathematical functional equivalence checker that allows question creation to be easy and answer checking to be automated. We also wanted to begin exploring some of the details that are needed for the theory to work. For example the basic version of the teacher's Dilemma requires a difficulty score for problems. While this would ideally be generated by user data until that can be obtained we need to have a heuristic to bootstrap the process in a reasonable fashion.
+
+\subsection{Teacher's Dilemma}
+The goal of the Teacher's Dilemma is to have a framework that provides appropriate motivation for peers to become a good teachers for each other. The end goal being that we could reduce or even eliminate what is normally a powerful limitation, large number of students in a class. This would mean it would then be possible to efficiently scale up class sizes or greatly improve the effectiveness of MOOCs. Which in turn could help equalize the education gap, or at least reduce the cost of bringing quality education to those who need it most. Alternatively it could even be useful on the higher end of education in promoting high quality study groups. [This paragraph is somewhat of a duplicate of earlier maybe remove?]
+
+The core idea of the Teacher's Dilemma revolves around how to reward peer teachers. Ari's thesis covers this in detail but we will give a summary here. We consider the situation of two peers, one playing the role of  teacher and the other student. If we simplify things and assume that a teacher's role is to ask questions of a various difficulties (say ranging from 0, easiest, to 1, hardest), then the question becomes how hard a question should they ask to maximize learning? And more to the point how should we reward them given what question they asked and how well the student did answering it.
+
+The response to this question is based loosely off the Prisoner's Dilemma notion from Game Theory (hence the name Teacher's Dilemma). We think of the universe as payoff matrix. Did the teacher ask a hard question or any easy one and did the student answer the question correctly or not. Again a full explanation of what assumptions are required to analyze this are covered in Ari's thesis but the condensed versions is as follows. We reward the teacher a high number of points if they ask a hard question the student get right or an easy question the student gets wrong. Intuitively the idea is that we want harder and harder questions that the student can figure out to push their limits. And we to expose holes in the student's knowledge by asking them easy questions they got wrong.
+
+More formally if we call the question difficulty D, and C indicates if the student got the question correct we award the teacher points in the following manner:
+
+if C is true the teacher receives D points
+if C is false the teacher receives 1-D points
+
+Which yields the desired result of rewarding hard questions that are answered correctly and easy question that are answered incorrectly.
+
+\section{Related Work}
+Computer based support for learning has been around for a while in a variety of forms. There are other efforts that are tangentially related, such as Game-Based Learning and Intelligent Tutoring Systems. There range from simple free sites that have example problems and solutions (Calculus.com) to pay site that provide tutoring from a live person (www.tutor.com/subjects/calculus). Others have tried Intelligent Tutoring systems [example / reference maybe: http://www.iaeng.org/publication/WCECS2009/WCECS2009\_pp640-645.pdf] or online study groups [maybe use Grockit?]. 
+
+This work is closely most closely related to two major projects. 
+But the two projects above are the most closely related works.
+
+The first is the work by Arnold Pizer, Mike Gage, and Vicki Roth in 2003 on an automatically graded Mathematics homework system called WebWork
+"WeBWorK: Generating, delivering, and checking math homework via the Internet" by Gage, Pizer, Roth in 2003
+
+WebWork has been around for over a decade and there have been a dozen or so papers demonstrating its effectiveness as a pedagogical tool. The main findings are that students enjoy getting immediate feedback, that they often continue working until they get the right answer even if it takes many tries, and that they spend less time studying for the class but get the same or better grades. Finally, the teachers find that it saves a great deal of grading time, which they can then use for other purposes such as office hours or research. It should be noted that WebWork does allow users to create problems but this is an advanced feature that requires coding knowledge.
+
+The second that we are extending is Ari's PhD dissertation 
+"The Teacher’s Dilemma: A game-based approach for motivating appropriate challenge among peers" by Ari Bader-Natal at Brandeis in 2008
+We are directly continuing the Teacher's Dilemma concept and expanding in both in scope of domains it can be applied to (i.e. Higher Learning specifically Calculus) as well as expanding on the theory in terms of attempting to keep track of a more advanced notion of "relative" questions difficulty and a deeper insight into the errors paths people take before getting the correct answer [Should make sure this gets supported later].
+
+Dr. Bader-Natal applied his methods to online learning systems at a company, Grockit Inc, after he graduated from Brandeis and there have been about a dozen publications in the area of collaborative games, but these have focused on 2 person games and in the context of MOOCs and non-traditional teaching environments.
+
+
+\section{CalcTutor} --Kristian
+The CalcTutor system is a semi automated online learning system designed to teach students Calculus by asking them a variety of questions appropriate to their skill level. The system has instant answer checking so students get immediate feedback on if they got a question right or wrong. It can be used by a teacher to easily construct a quiz which students can take or students can pair off and play games with each other. In this mode Students create questions for each other and are rewarded for answering questions correctly and asking good questions.
+
+\subsection{Organization}
+The CalcTutor is currently designed with the classroom in mind (although it will be easy to adapt to a more open internet model later). The System has a concept of Organizations that serve as an umbrella for Classes. Users can sign up for classes, either as a teacher or a student. Teachers are allowed to create quizzes that are shared with everyone in the class. Quizzes are simply a list of questions that anyone in the class can attempt to answers. In general users are allowed to attempt to answer a question as many times as they want. Every attempt is recorded and teachers can see all the attempts a student makes.
+
+\subsection{Games}
+Students can also initiate Games with other students in their class. To do this the student picks a partner (from a list of all the other students in the class) and the other student receives a request. The partner can see the request in a sidebar on most pages that indicates the current status of games but the students can also set up their preferences to receive emails about game updates as well. Each player then constructs a game quiz, a set of three questions, for the other player.
+
+While the player is building a game quiz they have access to several important pieces of information. They can see a list questions the other player got correct recently, as well as a list of the most recent incorrect question. Additionally as they are building their question they can see a difficulty rating for the question as well as how many points they will get if the other player gets the question correct or incorrect.
+
+[Image here of game question building with points / recent history]
+
+\subsection{Questions and Answers}
+Regardless of whether the question is being build for a quiz or a game the basic process is the same. The system allows users to create two different types of questions. Either: "what is the derivative this function", or "what is the tangent line to this function at this point". Question creation is quick and easy. Users select the type of question they want to ask and then enter either a function (of x) to differentiate or a function and a value if they are asking a tangent line question. The functions (and values) are entered as text, "x\^\ 2 + 3" for example, in a html input box. As soon as anything can be parsed it is displayed to the right of the input in a nicer format. If the system can't understand the current input a red warning icon is displayed. Most functions used in a intro calculus class are understood, +, -, *, /, power (which can be written as \^\  ), log, exponential and trigonometric functions like sin, cos are all valid. When the user is finished they click submit.
+
+[Screen shot sequence of problem creation w/ and wo/ warning icon]
+
+It should be noted that the system is constantly checking what the user types and it does not allow an invalid function to be submitted. Thus whatever the user submits will be a valid function and (since we only allow differentiable functions) differentiable. So anything that gets into the system will at least be a mathematically correct question.
+
+Since the Teacher's Dilemma requires a notion of difficulty for a question the system computes one for a question when it is created. We were unable to find a simple method for quickly ranking the difficulty of calculus questions numerically so we created a heuristic that we are using to bootstrap the system. The heuristically works by thinking about Questions in terms of Constants, Variables and Functions. The Question is the broken down into a binary tree where terminal nodes are Constants or Variables and leaves are functions. Each function adds some number of difficulty points based on what it's children are. If one, or more, of it's children are functions it will then add it's points to the value of that child. Thus the difficulty of a question is defined recursively by starting at the root node, adding it's value and then summing the values for all of the children below it. See [Appendix: Question Difficulty do we need this?] for more details.
+
+Answering Questions is done in a similar manner to their creation. The user gets an input box (or boxes) and types text math equations. Once the answer is submitted the system has a custom symbolic differentiation engine that allows us to differentiate the appropriate question. The answer and the differentiated functions are then compared on a large number of random points. If they ever disagree the answer is deemed incorrect and if they agree everywhere the answer is correct. It is possible for system to be unable to evaluate the function at a given point. This can lead to a case where the system simply can't tell if the two functions are equivalent. In this case the system sends that information back to the user and requests that they try again. In practice, because we restrict what functions a user can use and users are either teachers or intro Calc students, this eventually hasn't occurred in any live tests. For the purposes of the pilot study students were allowed as many attempts as they wanted until they got the question correct.
+
+\subsection{User Information}
+The system has multiple ways it can track and display user progress. Each individual answer is recorded so users can review how what they did in detail. But the system also present summary data for quizzes and games. Essentially users can see if ever answered a question correctly and what percentage of questions they got correct in a given quiz or game. We also keep track of an overall student score for each user. This score is currently just the average of the top five highest difficulty questions they have answered correctly.
+
+One minor note of difference between our work and the original formulation of the teachers dilemma is that we use a notion of relative difficulty when computing the teacher scores in games. What this means is that when we compute the teacher points for game question we consider the D in the teacher points equation to be the difficulty of the question divided by the user's student points. Thus as the student improves a teacher will need to keep asking more difficult questions to get the same number of teacher points. On the other hand if they pair up with a less experienced student they will need to adjust the difficulty of the questions they are asking or their partner won't get any correct.
+
+Users can review Quizzes and Games they've participated in and see summaries. For Quizzes this is either a quiz a summary page that show what questions they correctly answered or a question detail page which shows all of their answers for a specific question. Games show the users Student score and teacher score. The student score is a percentage of questions they answered correctly. The teacher score is the average of the teacher points for each question. Users can also compare their standing to via a leaderboard that show the top players in terms of Highest Student Skill Level, Most Games Played, Most Unique People Played, Highest Total Student Score and Highest Total Teacher Score. 
+
+\subsection{Technical Details}
+The system was built in Scala using the Play Framework, a web development platform, it uses Postgres for storage and is designed to be deployed on Heroku. Play itself is a highly scalable platform that could support many users but pairing it with Heroku, a "Cloud Application Platform", means that we can dynamically request virtual hardware as usage demands and scale up dramatically if needed.
+
+
+\section{Pilot Study}
+We ran a pilot study of the CalcTutor tool in April 2015.  Our goal was to obtain preliminary data and feedback to determine the effectiveness of the tool as it currently stands and to influence directions and priorities for future development.  
+
+The tool was used by students in the differential Calculus course (Math 10a) at Brandeis University.  The students were asked to complete a ``Pre-quiz'', play at least three games with other students, complete a ``Post-quiz'' and then take a survey.  This was assigned as a homework set, in which the students would receive 5 points for completing each of these obligations (regardless of performance).  The questions on the post-quiz were essentially the same as the questions on the pre-quiz (with only minor changes, such as different numbers or swapping sine for cosine).  The students had several days to complete the tasks.  
+
+We had 117 students enrolled, split among 5 sections.  Out of these 117 students, 96 participated in the study in some capacity.  Of the 96 who participated, 94 tried the pre-quiz and 81 tried the post-quiz.  We had 74 students who played at least 3 games, 10 students who played 2 games and 8 students who played only 1 game.  We had 68 students who completed the survey.  
+
+Unfortunately, the timing of the study (in relation to course material) was not ideal.  We had been hoping to have the students use the tool while they were in the process of learning derivative rules to maximize effectiveness on learning.  Due to an unusually large spate of severe snowstorms, we had many cancelled classes, which delayed our study.  By the time students were using the tool, they had already learned most of the basic derivative rules in class and had already had an exam that included some of these rules.  One outcome that we would have expected to see (due to similar results in past studies of WeBWorK) is increased efficiency of learning (students displaying the same amount of learning with less time on task), but this was not evident in our study because the students had already learned the material.
+
+We expected (from prior feedback on WeBWorK) that students would experience difficulty and frustration with entering mathematical functions on the computer.  We did indeed see this feedback in our survey.  The average response to our survey question ``How hard did you find it to input answers?’’ was 1.65 out of 5 (where 1 was ``hard’’ and 5 was ``easy’’).  Out of 68 survey respondents, 44 either mentioned (in open-response questions) that they did not like typing in math or suggested improving the input system and 23 of these students recommended having buttons for common mathematical functions and operations (like a calculator).  We believe that some of this frustration around input of math would have been alleviated by having more time for students to acclimate to the tool and by having a schedule in which students were really using the tool to learn, rather than review (thereby increasing motivation).  Several students recommended either showing answers or giving hints for students who had made multiple attempts without getting to the correct answer.  A few students recommended showing which students are currently online in order to improve the experience of finding a partner for a game.
+
+
+
+
+\section{Results}
+The main goal of this pilot study was to gather initial data on the use of CalcTutor in all of the Calculus courses at a University. We were looking at several broad measures:
+\begin{itemize}
+\item Scalability. Does CalcTutor scale to handle hundreds of simultaneous users.
+\item Learning Outcomes. Does CalcTutor have a positive effect on learning outcomes.
+\item Problem Solving Strategies. Were there any common errors and if so, how likely were students to go from one error to another error?  How did these strategies change between the pre and post tests.
+\item Student Response. What do the students think about using CalcTutor?
+\end{itemize}
+We were also interested in several technical points that would help us fine tune the system for future experiments:
+\begin{itemize}
+\item Question Difficulty. Is there a positive correlation between the heuristic measure of problem difficulty and an empirical measure - the percent of students who answered it correctly, possibly weighted by the number of attempts required to find the solution.
+\end{itemize}
+
+
+\subsection{Scalability}
+While users had some confusion about how to type in answer there do not seem to have been any errors, delays, or sluggishness on the systems part. All users were able to get into the system, create and answers questions. The symbolic differentiator and functional equivalence testing seem to have been up the task of handling the quiz and game questions and answers. We did need to expand the Heroku platform beyond the free offering to the "2 dyno" level.  
+
+
+\subsection{Learning Outcomes}
+There were 86 students who took both the pre-test and post-test in our experiment. Each test had 8 derivative problems and the questions for the post-test were created by making slight modifications of the pre-test questions (e.g. changing constants, replacing special functions by similar ones, e.g. sin by cos).  We looked at three ways to measure learning outcomes.
+\begin{itemize}
+\item Correct on First Try. This corresponds to the traditional pencil and paper exam where students only get one attempt at answering the question
+\item Correct Eventually. This corresponds to the exam where students get immediate feedback (as with CalcTutor) and are allowed to resubmit an unlimited number of times until they get the correct answer or give up.
+\item Attempts/Correct Answers. This measures the average number of attempts a student makes on a problem that he or she eventually gets correct.  Measuring the average number of attempts for incorrect problems would give a measure of persistence, but not necessarily of learning.
+\end{itemize}
+
+
+\begin{table}[ht] 
+\caption{Nonlinear Model Results} 
+% title of Table 
+\centering 
+% used for centering table 
+\begin{tabular}{c c c c} 
+\hline\hline
+% centered columns (4 columns) 
+%\hline\hline 
+%inserts double horizontal lines 
+Test & Correct on First Try & Correct Eventually & Attempts/Correct Answer \\ [0.5ex] 
+% inserts table heading 
+%\hline 
+\hline
+% inserts single horizontal line 
+pre-test & 52.75\% (sd=26) & 75.38\% (sd=29.25) & 1.52 (sd=0.85) \\
+post-test & 61.75\% (sd=24) & 74.63\% (sd=24.00) &  1.26 (sd=0.30 )\\
+diff & 6.12\% (p=0.016) & -0.75\% (p=0.40) & -0.26 (p$<$0.001) \\ [1ex] % [1ex] adds vertical space 
+\hline
+%\hline %inserts single line 
+\end{tabular} 
+\label{table:nonlin} % is used to refer this table in the text 
+\end{table}
+
+\subsection{Student Response}
+.... copy Becci's text about student comments here .....
+
+\subsection{Question Difficulty}
+Ideally we would determine the difficulty of a question from data. But since we need to bootstrap the system we constructed the difficulty for Questions described above. To verify that this heuristic is reasonable we looked at the results for our quiz questions for the Math10A students who used this system.  Specifically we used linear regression to predicting number of students who got a question correct with the question ranking score heuristic as the only explanatory variable. Unfortunately our difficulty metric for tangent questions seems to be fairly off, however since students only ended up building derivative questions for each other this is less of an issue for the rest of this analysis. In terms of Derivative questions There were a total of twenty two questions and a hundred and two students who were answering the questions. The result was that the ranking score is significant and accounted for a sizeable amount of the variance (p = 7.88e-05 with r2=0.5271). So while it will take a great deal more experimentation to actually find a more conclusive difficulty metric our approximation seems to be a solid starting point.
+
+
+\subsection{Problem Solving Strategies and Markov Models}
+The CalcTutor system stores a time-stamped version of every attempt each student makes on every problem they attempt to solve. This allows us to conglomerate the data for all students attempts on one problem into a Markov Model that represents a probabilistic model of the problem solving strategies of the class. We expected that these models would give us a deeper insight into the kinds of problems that students were encountering while trying to solve the quiz questions. We also suspected that comparing the Problem Solving Markov Models (PSMM) for the corresponding pre and post-test problems would give us a deeper insight into the learning outcomes of our students interaction with the CalcTutor.
+
+Figure \ref{fig:prob127} shows the Problem Solving Markov Model (PSMM) for the problem of finding the derivative of $e^{3x}$ in the pre-test. The nodes in this graph correspond to all of the answers that were submitted as possible solutions to the problem. The area of each node is proportional to the number of students that submitted that attempted solution. The edges between nodes are labelled with the number of students that went from one attempted solution to the next in one step. Thus we can see that 50 of the 86 students went from the start state to the solution $3e^{3x}$ in one step. Figure \ref{fig:prob138} shows the PSMM for the corresponding problem in the post-test -- finding the derivative of $e^{5x}$.  These two PSMMs provide a qualitivative understanding of the effect of using CalcTutor on their pre and post-test performance. We can make the following observations:
+\begin{itemize}
+\item In the pre-test only 50/86 students went directly to the correct solution in one step. Another 10/86 students made one or more attempts before giving up, and 26 out of 86 students made one or more attempts before getting the correct solution.
+\item In the pre-test PSMM there are many more attempted solutions and several that are shared by multiple students. The most common error is a syntax error where the correct answer {"3e\^\ (3x)"} is entered without the requisite parenthesis as {"3e\^\  3x"} which corresponds to $3e^3x$. The other most common errors are {"3e\^\  x"} and {"e\^\  (3x)"} which correspond to conceptual errors.
+\item In the post-test PSMM, the only common error is forgetting the parentheses in the correct solution: {"3e\^\  (3x)"}.
+\end{itemize}
+	
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{r127.png}
+\caption{Problem Solving Markov Model for pre-test question: d/dx($e^{3x}$)}
+\label{fig:prob127}
+
+
+\centering
+\includegraphics[width=1.8in]{r138.png}
+\caption{Problem Solving Markov Model for post-test question: d/dx($e^{5x}$)}
+\label{fig:prob138}
+\end{figure}
+
+
+Figures \ref{fig:prob128} and \ref{fig:prob140} show a pair of more complex (but structurally similar) problems to find the derivatives of $cos(x)e^{2x}$ for the pre-test and $e^{3x}sin(x)$ for the post-test, respectively. Again, visual analysis of these two graphs shows that the class problem solving behavior became more direct and effective between the pre and post tests. Indeed, we observe
+\begin{itemize}
+\item In the pre-test, 38 students go directly to the correct solution, but the 20 other students that eventually get it correct take 15 different paths from the start state to the correct solution and some of these paths go through five or more attempted solutions.
+\item In the post-test, 50 students go directly to the correct solution, and the 10 remaining students that eventually get the correct solutoin take 7 different paths from start to the correct solution. 
+\item The two common errors occurred less frequently in the post-test than the pre-test, and in general there were many fewer steps to get from the start state to the correct solution in the post-test.
+\end{itemize}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{r128.png}
+\caption{Problem Solving Markov Model for pre-test question: d/dx($cos(x)e^{2x}$)}
+\label{fig:prob128}
+
+
+\centering
+\includegraphics[width=1.8in]{r140.png}
+\caption{Problem Solving Markov Model for post-test question: d/dx($sin(x)e^{3x}$)}
+\label{fig:prob140}
+\end{figure}
+
+
+\subsection{Qualitative}
+As was expected based on previous experience and webwork papers users found the instantaneous feedback [This was already covered somewhat in Pilot?]
+
+
+
+
+\subsection{Things that didn't work}
+[Do we want this section]
+* Student Skill Level
+* Was there improvement between prequiz and postquiz (TJH)
+
+
+
+
+Discussion - discuss the importance of the results
+
+
+
+
+\section{Conclusions and Future Work }
+
+
+Conclusions and Future Work - describe next steps and implications for Engineering Education in general
+
+
+* More question types
+* In surveys, several students suggested each of the following:
+   * make the input easier (possibly with common function buttons and/or highlighting matching parentheses)
+   * showing who is online vs. who is offline to aid in finding someone to play
+   * providing answers or hints after several incorrect attempts
+* Refine Scoring
+   * We have a notion of student skill level which works with question difficulty to determine a relative difficulty for the student
+      * Question Diff
+      * Teacher Score
+   * Can we have a follow up to asking easy questions the other player gets wrong
+   * Prevent bad questions
+      * Too long / confusing
+      * asking the same question over and over again 
+* Run More Experiments
+   * Real A/B Experiment
+   * Expand Beyond Brandeis
+   * Open Web
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{IEEEhowto:kopka}
+H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
