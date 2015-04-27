@@ -627,7 +627,36 @@ diff & 6.12\% (p=0.016) & -0.75\% (p=0.40) & -0.26 (p$<$0.001) \\ [1ex] % [1ex] 
 .... copy Becci's text about student comments here .....
 
 \subsection{Question Difficulty}
-Ideally we would determine the difficulty of a question from data. But since we need to bootstrap the system we constructed the difficulty for Questions described above. To verify that this heuristic is reasonable we looked at the results for our quiz questions for the Math10A students who used this system.  Specifically we used linear regression to predicting number of students who got a question correct with the question ranking score heuristic as the only explanatory variable. Unfortunately our difficulty metric for tangent questions seems to be fairly off, however since students only ended up building derivative questions for each other this is less of an issue for the rest of this analysis. In terms of Derivative questions There were a total of twenty two questions and a hundred and two students who were answering the questions. The result was that the ranking score is significant and accounted for a sizeable amount of the variance (p = 7.88e-05 with r2=0.5271). So while it will take a great deal more experimentation to actually find a more conclusive difficulty metric our approximation seems to be a solid starting point.
+
+Ideally we would determine the difficulty of a question from data. But
+since we need to bootstrap the system we constructed the difficulty
+for Questions described above. To verify that this heuristic is
+reasonable we looked at the results for our quiz questions for the
+Math10A students who used this system.  Specifically we used linear
+regression to predicting number of students who got a question correct
+with the question ranking score heuristic as the only explanatory
+variable. 
+
+In terms of Derivative questions There were a
+total of twenty two questions and a hundred and two students who were
+answering the questions. The result was that the ranking score is
+significant and accounted for a sizeable amount of the variance (p =
+7.88e-05 with r2=0.5271). So while it will take a great deal more
+experimentation to actually find a more conclusive difficulty metric
+our approximation seems to be a solid starting point.
+
+If we look only at the 16 derivative quiz questions used in the pre and post-tests
+we can create a scatter plot of the empirical problem difficulty calculated as the
+percentage of students that answered it incorrectly, versus our heuristic. The scatter plot
+is shown in Figure \ref{fig:difficulty}.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{difficultyScatterPlot.png}
+\caption{X=percentage of students answered problem incorrectly, Y = difficulty heuristic value
+}
+\label{fig:difficulty}
+\end{figure}
 
 
 \subsection{Problem Solving Strategies and Markov Models}
