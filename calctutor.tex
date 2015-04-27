@@ -416,23 +416,72 @@ Email: tjhickey@brandeis.edu
 
 We have designed and built CalcTutor, an online educational tool for Calculus that employs the Teacher’s Dilemma methodology. This methodology is centered around a game framework where students take on, and are rewarded for playing well, both the role of learner and teacher. Students create machine-verifiable questions for each other and gain points based on not only correct answers but also asking “good” questions. This framework has been used and studied in a variety of projects, mostly in the K-12 arena. In this paper, we are reporting on our experience with a pilot program that expanded this approach to college level classes, specifically introductory Calculus. 
 
-The system is designed to support learning in two ways, teachers can build quizzes for their students and the students can pair off and play games with each other. During this pilot study the students built questions for each other while being given dynamic feedback about how appropriate their question is. Students asked and answered problems based around finding the derivative of a functions or calculating the tangent line to a function at a point.
+The system is designed to support learning in two ways, teachers can
+build quizzes for their students and the students can pair off and
+play games with each other. During this pilot study the students built
+questions for each other while being given dynamic feedback about how
+appropriate their question is. Students asked and answered problems
+based around finding the derivative of a functions or calculating the
+tangent line to a function at a point.
 
-The system was simultaneously tested in five introductory Calculus sections which generated a sizeable body of system data as well as survey feedback. Unfortunately, like many new tools, some of the students found getting used to the interface hard and some of our theoretical concepts did not pan out. Nevertheless the technical parts of the system worked well; students and teachers were able to create and answer questions without any issues. Some of the untested ideas that we were trying out met with success. And many students enjoyed some features of the system, particularly the instantaneous feedback.
+The system was simultaneously tested in five introductory Calculus
+sections which generated a sizeable body of system data as well as
+survey feedback. Unfortunately, like many new tools, some of the
+students found getting used to the interface hard and some of our
+theoretical concepts did not pan out. Nevertheless the technical parts
+of the system worked well; students and teachers were able to create
+and answer questions without any issues. Some of the untested ideas
+that we were trying out met with success. And many students enjoyed
+some features of the system, particularly the instantaneous feedback.
 
 \end{abstract}
 
 \section{Introduction}
- statement of the research questions -- TIM
 
-One of the enticing promises of online education is the ability to scale up class size dramatically while maintaining, or at least not significantly lowering, the level of learning. The Teacher's Dilemma offers a way to realize this goal. By creating a framework within which peers are rewarded for being good teachers we can turn the usual limitation of having large number of students into an asset. The hope is that this might be able to offset the difficulties of having a large class size. And thus be a viable way to improve a larger classes, or even open online learning.
+One of the enticing promises of online education is the ability to
+scale up class size dramatically while maintaining, or at least not
+significantly lowering, the level of learning. The Teacher's Dilemma
+offers a way to realize this goal. By creating a framework within
+which peers are rewarded for being good teachers we can turn the usual
+limitation of having large number of students into an asset. The hope
+is that this might be able to offset the difficulties of having a
+large class size. And thus be a viable way to improve a larger
+classes, or even open online learning.
 
-The purpose of this pilot study was to take the Teacher's Dilemma one step closer to this goal. Previously the concept had only been applied to small isolated problems in the K-12 learning space. For example figuring out how to make specified cash amount out of quarters, dimes, nickels and pennies. We wanted to pick a larger, more complete corpus in the higher education space. We decided that college level intro calculus would be a sufficiently advanced, rich topic to build a system around.
+The purpose of this pilot study was to take the Teacher's Dilemma one
+step closer to this goal. Previously the concept had only been applied
+to small isolated problems in the K-12 learning space. For example
+figuring out how to make specified cash amount out of quarters, dimes,
+nickels and pennies. We wanted to pick a larger, more complete corpus
+in the higher education space. We decided that college level intro
+calculus would be a sufficiently advanced, rich topic to build a
+system around.
 
-For the pilot study we wanted to demonstrate the viability of the system from a technical standpoint as well as make inroads into showing how some of the theoretical aspects might work. We built a new web based system on a foundation that will allowing scaling up to a large number of users. The system has a custom differentiation engine and mathematical functional equivalence checker that allows question creation to be easy and answer checking to be automated. We also wanted to begin exploring some of the details that are needed for the theory to work. For example the basic version of the teacher's Dilemma requires a difficulty score for problems. While this would ideally be generated by user data until that can be obtained we need to have a heuristic to bootstrap the process in a reasonable fashion.
+For the pilot study we wanted to demonstrate the viability of the
+system from a technical standpoint as well as make inroads into
+showing how some of the theoretical aspects might work. We built a new
+web based system on a foundation that will allowing scaling up to a
+large number of users. The system has a custom differentiation engine
+and mathematical functional equivalence checker that allows question
+creation to be easy and answer checking to be automated. We also
+wanted to begin exploring some of the details that are needed for the
+theory to work. For example the basic version of the teacher's Dilemma
+requires a difficulty score for problems. While this would ideally be
+generated by user data until that can be obtained we need to have a
+heuristic to bootstrap the process in a reasonable fashion.
 
 \subsection{Teacher's Dilemma}
-The goal of the Teacher's Dilemma is to have a framework that provides appropriate motivation for peers to become a good teachers for each other. The end goal being that we could reduce or even eliminate what is normally a powerful limitation, large number of students in a class. This would mean it would then be possible to efficiently scale up class sizes or greatly improve the effectiveness of MOOCs. Which in turn could help equalize the education gap, or at least reduce the cost of bringing quality education to those who need it most. Alternatively it could even be useful on the higher end of education in promoting high quality study groups. [This paragraph is somewhat of a duplicate of earlier maybe remove?]
+
+The goal of the Teacher's Dilemma is to have a framework that provides
+appropriate motivation for peers to become a good teachers for each
+other. The end goal being that we could reduce or even eliminate what
+is normally a powerful limitation, large number of students in a
+class. This would mean it would then be possible to efficiently scale
+up class sizes or greatly improve the effectiveness of MOOCs. Which in
+turn could help equalize the education gap, or at least reduce the
+cost of bringing quality education to those who need it
+most. Alternatively it could even be useful on the higher end of
+education in promoting high quality study groups.
 
 The core idea of the Teacher's Dilemma revolves around how to reward peer teachers. Ari's thesis covers this in detail but we will give a summary here. We consider the situation of two peers, one playing the role of  teacher and the other student. If we simplify things and assume that a teacher's role is to ask questions of a various difficulties (say ranging from 0, easiest, to 1, hardest), then the question becomes how hard a question should they ask to maximize learning? And more to the point how should we reward them given what question they asked and how well the student did answering it.
 
@@ -446,21 +495,19 @@ if C is false the teacher receives 1-D points
 Which yields the desired result of rewarding hard questions that are answered correctly and easy question that are answered incorrectly.
 
 \section{Related Work}
-Computer based support for learning has been around for a while in a variety of forms. There are other efforts that are tangentially related, such as Game-Based Learning and Intelligent Tutoring Systems. There range from simple free sites that have example problems and solutions (Calculus.com) to pay site that provide tutoring from a live person (www.tutor.com/subjects/calculus). Others have tried Intelligent Tutoring systems [example / reference maybe: http://www.iaeng.org/publication/WCECS2009/WCECS2009\_pp640-645.pdf] or online study groups [maybe use Grockit?]. 
+Computer based support for learning has been around for a while in a variety of forms. There are other efforts that are tangentially related, such as Game-Based Learning and Intelligent Tutoring Systems. There range from simple free sites that have example problems and solutions (calculus.com) to pay site that provide tutoring from a live person (www.tutor.com/subjects/calculus). Others have tried Intelligent Tutoring systems \cite{yokota2009} or online study groups 
+(e.g. www.grockit.org). Our work is most closely related to two major projects: 
+\begin{itemize}
+\item WebWork by Pizer,Gage, and Roth \cite{gage2002} and 
+\item The Teacher's Dilemma by Bader-Natal \cite{bader-natal-2008}
+\end{itemize}
 
-This work is closely most closely related to two major projects. 
-But the two projects above are the most closely related works.
+WebWork \cite{gage2002} an automatically graded Mathematics homework system that has been around for over a decade and there have been a dozen or so papers demonstrating its effectiveness as a pedagogical tool. The main findings are that students enjoy getting immediate feedback, that they often continue working until they get the right answer even if it takes many tries, and that they spend less time studying for the class but get the same or better grades. Finally, the teachers find that it saves a great deal of grading time, which they can then use for other purposes such as office hours or research. It should be noted that WebWork does allow users to create problems but this is an advanced feature that requires coding knowledge.
 
-The first is the work by Arnold Pizer, Mike Gage, and Vicki Roth in 2003 on an automatically graded Mathematics homework system called WebWork
-"WeBWorK: Generating, delivering, and checking math homework via the Internet" by Gage, Pizer, Roth in 2003
+The Teacher's Dilemma is an approach to online pedagogy developed by Dr. Ari Bader-Natal in his 2008 PhD dissertation 
+"The Teacher’s Dilemma: A game-based approach for motivating appropriate challenge among peers". We are directly continuing the Teacher's Dilemma concept and expanding in both in scope of domains it can be applied to (i.e. Higher Learning specifically Calculus) as well as expanding on the theory in terms of attempting to keep track of a more advanced notion of "relative" questions difficulty and a deeper insight into the errors paths people take before getting the correct answer.
 
-WebWork has been around for over a decade and there have been a dozen or so papers demonstrating its effectiveness as a pedagogical tool. The main findings are that students enjoy getting immediate feedback, that they often continue working until they get the right answer even if it takes many tries, and that they spend less time studying for the class but get the same or better grades. Finally, the teachers find that it saves a great deal of grading time, which they can then use for other purposes such as office hours or research. It should be noted that WebWork does allow users to create problems but this is an advanced feature that requires coding knowledge.
-
-The second that we are extending is Ari's PhD dissertation 
-"The Teacher’s Dilemma: A game-based approach for motivating appropriate challenge among peers" by Ari Bader-Natal at Brandeis in 2008
-We are directly continuing the Teacher's Dilemma concept and expanding in both in scope of domains it can be applied to (i.e. Higher Learning specifically Calculus) as well as expanding on the theory in terms of attempting to keep track of a more advanced notion of "relative" questions difficulty and a deeper insight into the errors paths people take before getting the correct answer [Should make sure this gets supported later].
-
-Dr. Bader-Natal applied his methods to online learning systems at a company, Grockit Inc, after he graduated from Brandeis and there have been about a dozen publications in the area of collaborative games, but these have focused on 2 person games and in the context of MOOCs and non-traditional teaching environments.
+Dr. Bader-Natal applied his methods to online learning systems at a company, Grockit Inc, after he graduated from Brandeis and there have been about a dozen publications in the area of collaborative games, but these have focused on 2 person games and in the context of MOOCs and non-traditional teaching environments \cite{bader-natal-2009}.
 
 
 \section{CalcTutor} --Kristian
@@ -472,14 +519,27 @@ The CalcTutor is currently designed with the classroom in mind (although it will
 \subsection{Games}
 Students can also initiate Games with other students in their class. To do this the student picks a partner (from a list of all the other students in the class) and the other student receives a request. The partner can see the request in a sidebar on most pages that indicates the current status of games but the students can also set up their preferences to receive emails about game updates as well. Each player then constructs a game quiz, a set of three questions, for the other player.
 
-While the player is building a game quiz they have access to several important pieces of information. They can see a list questions the other player got correct recently, as well as a list of the most recent incorrect question. Additionally as they are building their question they can see a difficulty rating for the question as well as how many points they will get if the other player gets the question correct or incorrect.
+While the player is building a game quiz they have access to several important pieces of information. They can see a list questions the other player got correct recently, as well as a list of the most recent incorrect question (see Figure \ref:{fig:history}).
+Additionally as they are building their question they can see a difficulty rating for the question as well as how many points they will get if the other player gets the question correct or incorrect. (See Figure {fig:addQuestion}.
 
-[Image here of game question building with points / recent history]
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{playershistory.png}
+\caption{Interface for students to see history of other students.}
+\label{fig:history}
+\end{figure}
 
 \subsection{Questions and Answers}
-Regardless of whether the question is being build for a quiz or a game the basic process is the same. The system allows users to create two different types of questions. Either: "what is the derivative this function", or "what is the tangent line to this function at this point". Question creation is quick and easy. Users select the type of question they want to ask and then enter either a function (of x) to differentiate or a function and a value if they are asking a tangent line question. The functions (and values) are entered as text, "x\^\ 2 + 3" for example, in a html input box. As soon as anything can be parsed it is displayed to the right of the input in a nicer format. If the system can't understand the current input a red warning icon is displayed. Most functions used in a intro calculus class are understood, +, -, *, /, power (which can be written as \^\  ), log, exponential and trigonometric functions like sin, cos are all valid. When the user is finished they click submit.
+Regardless of whether the question is being build for a quiz or a game the basic process is the same. The system allows users to create two different types of questions. Either: "what is the derivative this function", or "what is the tangent line to this function at this point". Question creation is quick and easy. Users select the type of question they want to ask and then enter either a function (of x) to differentiate or a function and a value if they are asking a tangent line question. The functions (and values) are entered as text, "x\^\ 2 + 3" for example, in a html input box. As soon as anything can be parsed it is displayed to the right of the input in a nicer format. If the system can't understand the current input a red warning icon is displayed. Most functions used in a intro calculus class are understood, +, -, *, /, power (which can be written as \^\  ), log, exponential and trigonometric functions like sin, cos are all valid. When the user is finished they click submit.  Figure \ref{addQuestion} shows the user interface where the user is about to close the parenthesis on sin(x). The system shows the nicely formatted part of the expression that it is able to parse and uses the red asterisk to indicate that the expression is not yet a valid formula.
 
-[Screen shot sequence of problem creation w/ and wo/ warning icon]
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{addQuestion.png}
+\caption{Interface for students to create quiz questions }
+\label{fig:addQuestion}
+\end{figure}
+
 
 It should be noted that the system is constantly checking what the user types and it does not allow an invalid function to be submitted. Thus whatever the user submits will be a valid function and (since we only allow differentiable functions) differentiable. So anything that gets into the system will at least be a mathematically correct question.
 
@@ -698,11 +758,26 @@ The authors would like to thank...
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\begin{thebibliography}{1}
+\bibitem{bader-natal-2008}
+Bader-Natal, Ari. The Teacher's Dilemma: A game-based approach for motivating appropriate challenge among peers. ProQuest, 2008.  http://aribadernatal.com/dissertation/ 
+
+\bibitem{gage2002}
+Gage, Michael, Arnold Pizer, and Vicki Roth. "WeBWorK: Generating, delivering, and checking math homework via the Internet." ICTM2 international congress for teaching of mathematics at the undergraduate level, Hersonissos, Crete, Greece. http://www. math. uoc. gr/~ ictm2/Proceedings/pap189. pdf. 2002.
+
+%We could use this as an example of Intelligent Tutoring systems that do Calculus
+\bibitem{yokota2009}
+Hisashi Yokota. "An Adaptive Tutoring System for Calculus Learning" Proceedings of the World Congress on Engineering and Computer Science 2009 Vol I WCECS 2009, October 20-22, 2009, San Francisco, USA
+
+%Here's a paper from Ari about Grockit and study groups
+\bibitem{bader-natal-2009}
+Ari Bader-Natal. "Incorporating game mechanics into a network of online study groups" Workshop on Intelligent Educational Games - AIED 2009
+
+%Here's a paper about CSCL Calculus Learning with GeoGebra, 
+% basically small group learning with CSCL can work
+\bibitem{takaci2015}
+Djurdjica Takaci,  Gordana Stankov and Ivana Milanovic. "Efficiency of learning environment using GeoGebra when calculus contents are learned in collaborative groups" Computers in Human Behavior Volume 45, April 2015, Pages 243–253
 
 \end{thebibliography}
 
